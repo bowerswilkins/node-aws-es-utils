@@ -46,7 +46,7 @@ exports.createESConnectorClass = function(opts) {
       awsReq.body = params.body;
       awsReq.headers['presigned-expires'] = false;
       awsReq.headers['Host'] = this.host.host;
-      awsReq.headers['Content-Type'] = "application/json";
+      awsReq.headers['Content-Type'] = 'application/json';
       const awsSigner = new AWS.Signers.V4(awsReq, 'es');
       awsSigner.addAuthorization(this.awsCredential, new Date());
       const awsHttpClient = new AWS.NodeHttpClient();
